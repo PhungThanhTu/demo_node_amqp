@@ -1,4 +1,4 @@
-# demo_node_amqp
+# Example of using RabbitMQ with NodeJS and Docker
 RabbitMQ demo project written in Node.js for Thesis App
 
 ## First, start the rabbitMQ server :
