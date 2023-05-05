@@ -4,14 +4,11 @@ dotenv.config();
 
 const conString = 'amqp://admin:admin@localhost:5672'
 
-const connectToRabbitMQ = async (constring) => {
-    return amqp.connect(constring);
-}
 
 async function trySendingMessage (message) {
     
     try {
-        const rabbitConnection = await connectToRabbitMQ(conString);
+        const rabbitConnection = await amqp.connect(conString);
 
         const channel = await rabbitConnection.createChannel();
 
@@ -32,4 +29,7 @@ async function trySendingMessage (message) {
     }
 }
 
-trySendingMessage('assd');
+trySendingMessage(JSON.stringify({
+    type: 'POST',
+    content: 'Sample JSON message'
+}));
