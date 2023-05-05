@@ -1,5 +1,5 @@
 # Logs
-/rabbitmq-data
+rabbitmq-data
 logs
 *.log
 npm-debug.log*
